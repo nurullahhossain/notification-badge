@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #01111b;
+}
+.bell__notification{
+    color: #fff;
+    position: relative;
+    animation: bell 1s linear infinite alternate-reverse;
+    transform-origin: top;
+    
+}
+@keyframes bell {
+    0% {
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+}
+.bell__notification::after{
+    position: absolute;
+    content: attr(current-count);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    right: 0%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    border: 5px solid #01111b;
+}
+.bx{
+    font-size: 100px;
+    cursor: pointer;
+}
